@@ -1,26 +1,17 @@
-package com.way2hacker.algorithm.snippets.array;
-
-import org.junit.jupiter.api.Test;
+package snippets.array;
 
 import java.util.Arrays;
 
 /**
- * @link https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/x2y0c2/
+ * @see <a href="https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/x2y0c2/">https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/x2y0c2/</a>
  * @author devin
- * @date 2021/11/30 10:46 下午
+ * @since 2021/12/10 7:06 下午
  */
-public class IntersectTest {
+public class ArrayIntersect {
 
-    @Test
-    public void test() {
-        int[] nums1 = new int[]{1, 2, 2, 1};
-        int[] nums2 = new int[]{2, 2};
-        System.out.println(Arrays.toString(intersect(nums1, nums2)));
-    }
-
-    public int[] intersect(int[] nums1, int[] nums2) {
-        sort(nums1);
-        sort(nums2);
+    public static int[] intersect(int[] nums1, int[] nums2) {
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
         int[] shortNums, longNums;
         if (nums1.length > nums2.length) {
             shortNums = nums2;
@@ -49,9 +40,5 @@ public class IntersectTest {
             result[k] = temp[k];
         }
         return result;
-    }
-
-    private void sort(int[] nums) {
-        Arrays.sort(nums);
     }
 }

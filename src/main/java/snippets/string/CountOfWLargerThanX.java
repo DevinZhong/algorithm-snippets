@@ -1,9 +1,7 @@
-package com.way2hacker.algorithm.snippets.string;
+package snippets.string;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.util.CollectionUtils;
-
-import java.util.*;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -12,11 +10,11 @@ import java.util.stream.IntStream;
  * 求：将?替换为数值后，w字符串大于x字符串的结果有多少种
  *
  * @author devin
- * @date 2021/11/21 8:37 下午
+ * @since 2021/12/10 8:04 下午
  */
-public class StringStatistics2Test {
-    private int count(String w, String x) {
-        System.out.println(w + ":" + x);
+public class CountOfWLargerThanX {
+
+    public static int count(String w, String x) {
         char[] wChars = w.toCharArray();
         char[] xChars = x.toCharArray();
         int questionCount = Long.valueOf(IntStream.range(0, wChars.length)
@@ -60,13 +58,13 @@ public class StringStatistics2Test {
      * @param deque deque栈
      * @return 成功返回true，失败返回false
      */
-    private boolean increase(Deque<Integer> deque) {
-        if (CollectionUtils.isEmpty(deque)) {
+    private static boolean increase(Deque<Integer> deque) {
+        if (deque == null || deque.size() == 0) {
             return false;
         } else {
             int zeroCount = 0;
             while (true) {
-                if (CollectionUtils.isEmpty(deque)) {
+                if (deque == null || deque.size() == 0) {
                     return false;
                 }
                 int lastValue = deque.removeLast();
@@ -88,55 +86,12 @@ public class StringStatistics2Test {
     /**
      * 栈后面补0
      *
-     * @param deque 栈
+     * @param deque     栈
      * @param zeroCount 末尾补充0的个数
      */
-    private void addZero(Deque<Integer> deque, int zeroCount) {
+    private static void addZero(Deque<Integer> deque, int zeroCount) {
         while (zeroCount-- > 0) {
             deque.addLast(0);
         }
-    }
-
-    @Test
-    public void test() {
-        String w = "?";
-        String x = "4";
-        int count = count(w, x);
-        assert count == 5;
-
-        w = "??";
-        x = "47";
-        count = count(w, x);
-        assert count == 52;
-
-        w = "??";
-        x = "89";
-        count = count(w, x);
-        assert count == 10;
-
-        w = "??";
-        x = "99";
-        count = count(w, x);
-        assert count == 0;
-
-        w = "?3?";
-        x = "447";
-        count = count(w, x);
-        assert count == 50;
-
-        w = "?47";
-        x = "447";
-        count = count(w, x);
-        assert count == 5;
-
-        w = "3?3?";
-        x = "5447";
-        count = count(w, x);
-        assert count == 0;
-
-        w = "192?32432??2342??333?";
-        x = "192472482442342243330";
-        count = count(w, x);
-        assert count == 500000;
     }
 }

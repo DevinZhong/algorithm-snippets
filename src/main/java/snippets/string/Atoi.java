@@ -1,27 +1,13 @@
-package com.way2hacker.algorithm.snippets.string;
-
-import org.junit.jupiter.api.Test;
+package snippets.string;
 
 /**
- * @link https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnoilh/
  * @author devin
- * @date 2021/12/01 8:55 下午
+ * @see <a href="https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnoilh/">https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnoilh/</a>
+ * @since 2021/12/10 7:47 下午
  */
-public class MyAtoiTest {
+public class Atoi {
 
-    @Test
-    public void test() {
-        String s = "  -47";
-        System.out.println(myAtoi(s));
-        s = "21474836460";
-        System.out.println(myAtoi(s));
-        s = " ";
-        System.out.println(myAtoi(s));
-        s = "-2147483648";
-        System.out.println(myAtoi(s));
-    }
-
-    public int myAtoi(String s) {
+    public static int myAtoi(String s) {
         if (s == null) {
             return 0;
         }

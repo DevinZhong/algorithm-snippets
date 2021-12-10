@@ -1,41 +1,13 @@
-package com.way2hacker.algorithm.snippets.string;
-
-import org.junit.jupiter.api.Test;
+package snippets.string;
 
 /**
- * @link https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnr003/
  * @author devin
- * @date 2021/12/08 2:22 下午
+ * @see <a href="https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnr003/">https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnr003/</a>
+ * @since 2021/12/10 7:40 下午
  */
-public class KMPTest {
+public class KMP {
 
-    @Test
-    public void test() {
-
-        var str = "ababcaababcaabc";
-        var pattern = "ababcaabc";
-        var index = strStr(str, pattern);
-        System.out.println(str + " -> " + pattern + " = " + index);
-
-        str = "hello";
-        pattern = "ll";
-        index = strStr(str, pattern);
-        System.out.println(str + " -> " + pattern + " = " + index);
-
-        str = "";
-        pattern = "";
-        index = strStr(str, pattern);
-        System.out.println(str + " -> " + pattern + " = " + index);
-
-        str = "aaa";
-        pattern = "aaa";
-        index = strStr(str, pattern);
-        System.out.println(str + " -> " + pattern + " = " + index);
-
-
-    }
-
-    public int strStr(String haystack, String needle) {
+    public static int strStr(String haystack, String needle) {
         char[] haystacks = haystack.toCharArray();
         char[] needles = needle.toCharArray();
         if (needles.length == 0) {
@@ -64,7 +36,7 @@ public class KMPTest {
      * @param pattern
      * @return
      */
-    private int[] getNext(String pattern) {
+    private static int[] getNext(String pattern) {
         int length = pattern.length();
         int[] next = new int[length];
         next[0] = -1;

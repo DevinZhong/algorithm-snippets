@@ -1,17 +1,18 @@
-package com.way2hacker.algorithm.snippets.string;
-
-import org.junit.jupiter.api.Test;
+package snippets.string;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
+ * 在字符串中统计连续出现2个a和连续出现2个b的个数，
+ * 连续出现3个a和3个b等，不计数
+ *
  * @author devin
- * @date 2021/11/21 12:49 下午
+ * @since 2021/12/10 7:55 下午
  */
-public class StringStatistics1Test {
+public class CountOfAaBb {
 
-    private static int count1(String text) {
+    public static int count(String text) {
         int aCount = 0;
         int bCount = 0;
         int totalCount = 0;
@@ -40,36 +41,20 @@ public class StringStatistics1Test {
         return totalCount;
     }
 
-    private int count2(String text) {
+    public static int countByRegExp(String text) {
         int count = 0;
         Pattern aPattern = Pattern.compile("([^a]|\\b)aa([^a]|\\b)");
         Matcher aMatcher = aPattern.matcher(text);
-        while(aMatcher.find()) {
+        while (aMatcher.find()) {
             String sub = text.substring(aMatcher.start(), aMatcher.end());
-            System.out.println(aMatcher.start() + ":" + aMatcher.end() + ":" + sub);
             count++;
         }
         Pattern bPattern = Pattern.compile("([^b]|\\b)bb([^b]|\\b)");
         Matcher bMatcher = bPattern.matcher(text);
         while (bMatcher.find()) {
             String sub = text.substring(bMatcher.start(), bMatcher.end());
-            System.out.println(bMatcher.start() + ":" + bMatcher.end() + ":" + sub);
             count++;
         }
         return count;
-    }
-
-    @Test
-    public void test1() {
-        String text1 = "aabbccddbbbbbaae";
-        int count = count1(text1);
-        assert count == 3;
-    }
-
-    @Test
-    public void test2() {
-        String text1 = "aabbccddbbbbbaae";
-        int count = count2(text1);
-        assert count == 3;
     }
 }
