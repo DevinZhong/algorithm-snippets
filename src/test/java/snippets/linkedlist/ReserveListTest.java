@@ -17,4 +17,11 @@ public class ReserveListTest {
         head = ReserveList.reverseList(head);
         Assertions.assertEquals("[5, 4, 3, 2, 1]", Arrays.toString(head.toArray()));
     }
+
+    @Test
+    public void test2() {
+        ListNode head = ListNode.fromArray(new int[] {1, 2, 3, 4, 5});
+        head = ReserveList.reverseList2(head);
+        Assertions.assertEquals("[5, 4, 3, 2, 1]", Arrays.toString(head.toArray()));
+    }
 }
