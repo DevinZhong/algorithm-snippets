@@ -7,7 +7,7 @@ package snippets.linkedlist;
 public class ReserveList {
     public static ListNode reverseList(ListNode head) {
         if (head == null) {
-            throw new RuntimeException("头节点不能为空");
+            return null;
         }
         ListNode prevNode = null;
         ListNode nextNode;
