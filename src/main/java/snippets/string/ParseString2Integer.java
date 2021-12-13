@@ -5,9 +5,9 @@ package snippets.string;
  * @see <a href="https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnoilh/">https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnoilh/</a>
  * @since 2021/12/10 7:47 下午
  */
-public class Atoi {
+public class ParseString2Integer {
 
-    public static int myAtoi(String s) {
+    public static int parseInt(String s) {
         if (s == null) {
             return 0;
         }

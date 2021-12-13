@@ -64,7 +64,7 @@ public class CountOfWLargerThanX {
         } else {
             int zeroCount = 0;
             while (true) {
-                if (deque == null || deque.size() == 0) {
+                if (deque.size() == 0) {
                     return false;
                 }
                 int lastValue = deque.removeLast();

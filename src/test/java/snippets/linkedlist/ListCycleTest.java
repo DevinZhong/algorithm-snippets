@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
  */
 public class ListCycleTest {
 
-    private ListCycle listCycle = new ListCycle();
+    private final ListCycle listCycle = new ListCycle();
 
     @Test
     public void test1() {

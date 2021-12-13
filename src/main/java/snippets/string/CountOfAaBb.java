@@ -46,13 +46,11 @@ public class CountOfAaBb {
         Pattern aPattern = Pattern.compile("([^a]|\\b)aa([^a]|\\b)");
         Matcher aMatcher = aPattern.matcher(text);
         while (aMatcher.find()) {
-            String sub = text.substring(aMatcher.start(), aMatcher.end());
             count++;
         }
         Pattern bPattern = Pattern.compile("([^b]|\\b)bb([^b]|\\b)");
         Matcher bMatcher = bPattern.matcher(text);
         while (bMatcher.find()) {
-            String sub = text.substring(bMatcher.start(), bMatcher.end());
             count++;
         }
         return count;

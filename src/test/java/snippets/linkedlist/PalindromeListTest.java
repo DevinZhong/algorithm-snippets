@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
  */
 public class PalindromeListTest {
 
-    private PalindromeList palindromeList = new PalindromeList();
+    private final PalindromeList palindromeList = new PalindromeList();
 
     @Test
     public void test1() {

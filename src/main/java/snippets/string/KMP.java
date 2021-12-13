@@ -33,8 +33,8 @@ public class KMP {
     /**
      * 构建 next[0] 为 -1 的 next 数组
      *
-     * @param pattern
-     * @return
+     * @param pattern 模式字符串
+     * @return 模式串对应的 next 数组
      */
     private static int[] getNext(String pattern) {
         int length = pattern.length();
