@@ -48,15 +48,21 @@ public class ListNode {
      * @return 生成的链表的头节点
      */
     public static ListNode fromArray(int[] array) {
-        if (array.length == 0) {
-            throw new RuntimeException("数组长度需大于0");
+        return fromArray(array, -1);
+    }
+
+    public static ListNode fromArray(int[] array, int pos) {
+        ListNode dummy = new ListNode(array[0]);
+        ListNode curr = dummy;
+        List<ListNode> list = new ArrayList<>();
+        for (int item : array) {
+            curr.next = new ListNode(item);
+            list.add(curr.next);
+            curr = curr.next;
         }
-        ListNode head = new ListNode(array[0]);
-        ListNode tempNode = head;
-        for (int i = 1; i < array.length; i++) {
-            tempNode.next = new ListNode(array[i]);
-            tempNode = tempNode.next;
+        if (pos != -1) {
+            curr.next = list.get(pos);
         }
-        return head;
+        return dummy.next;
     }
 }
